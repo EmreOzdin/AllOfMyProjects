@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="each" value="1" max="8">
+    <button id="getNumbers">Lucky Numbers</button>
+
+
+    <div>
+        <p id="result">
+
+        </p>
+        
+    </div>
+
+
+    <script>
+        let each = document.getElementById('each');
+let btn = document.getElementById('getNumbers');
+let res = document.getElementById("result");
+
+
+btn.addEventListener('click', function () {
+    res.innerHTML = "";
+
+
+    var numbers = [];
+
+    for (let i = 0; i < each.value; i++) {
+        for (var j = 0; numbers.length < 6; j++) {
+        let number = Math.floor(Math.random() * 90) + 1;
+        if(numbers.indexOf(number) === -1) {
+            numbers.push(number);
+        }
+    }
+
+let sorted = numbers.sort((a,b) => a - b)
+
+for (var k = 0; numbers.length < 7; k++) {
+    let number = Math.floor(Math.random() * 90) + 1;
+    if(numbers.indexOf(number) === -1) {
+      numbers.push(number);
+    }
+  }
+  numbers.push(Math.trunc(Math.random() * 90) + 1);
+
+res.innerHTML += sorted[0]+ '-' + sorted[1]+ '-' + sorted[2]+ '-' + sorted[3]+ '-' + sorted[4]+ '-' + sorted[5]+ ' |     ' + numbers[6]+ '   |   ' + numbers[7] + '<br>';
+res.innerHTML += '<hr>';
+numbers = []
+        
+    }
+
+
+});
+    </script>
+</body>
+</html>

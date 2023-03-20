@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color:#EEE8EF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./bgimage2.jpg");
+    background:cover;
+    background-size: 100vw ;
+    opacity:0.8;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;  
+    margin:auto;
+}
+#task{
+    height: 3em;
+    border-radius: 5px;
+    font-size: 1.4em;
+} 
+h1{
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 4em;
+    text-align: center;
+}
+/* todos*/
+.todolist{
+    width: 60vw;
+    padding: 0px 10px;
+    text-align: left;
+    border: 5px solid #E3A897;
+    color: rgb(39, 38, 38);
+    background-color: #FFFFFF;
+    margin:auto;
+    margin-top:2em;
+    box-shadow: 5px 10px #b1a6ac98;
+    border-radius: 10px;
+}
+ul li{
+    list-style-type: none; 
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 0.5em;
+    align-items: center;
+    cursor: pointer;
+    width: 50vw;
+   
+    overflow-wrap: break-word;
+    display: inline-block;
+}
+#add-task{
+    display:flex;
+    justify-content: center;
+    margin: 5px 0px;
+    width:60vw ;
+    box-shadow: 5px 10px #b1a6ac98;
+    border-radius: 5px;
+    /* border: 1px solid rgb(253, 0, 0); */
+    }
+li.checked::before {
+    content: "\2714";
+    font-size:1.5em;
+    color:rgb(106, 192, 106);
+    margin-right: 0.4em;
+    
+}
+li.unchecked::before {
+    content: "\2610";
+    font-size:1.5em;
+    margin-right: 0.4em;
+    }
+.list-group {
+    display:flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+    width: 100%;
+    }
+.list-group :hover{
+    transform: scale(1.04);
+}
+.btn,.add-btn {
+    background-color: #ACCACE; /* Blue background */
+    border: none; /* Remove borders */
+    border-radius:5px;
+    color: white; /* White text */
+    padding: 0.3em 0.4em; /* Some padding */
+    font-size: 1.2em; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    width:3em;
+  }
+input{
+    font-size: 1em;
+    border: none;
+    width: 100%;
+    padding: 1.5em;
+  }
+input:focus {
+    outline: none;
+  }
+hr{
+      flex-direction: column;
+  }
+#footer{
+    display: flex;
+    flex-direction: row;
+}
+p{
+    font-size: 1.4em;
+    display: block;
+    display: inline-block; 
+    margin-top:1em;
+}
+h2{
+    text-align: center;
+    margin:1em 0em;
+}
+.todolist-list-container{
+    margin-bottom:1em;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .todolist{
+        width: 80vw;
+    }
+    #add-task{
+        width: 80vw;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <main>
+        <h1>To Do List</h1>
+
+        <form id="add-task">
+            <input type="text" name="" id="task" placeholder="&#128393; add task">
+            <button class="add-btn"><i class="fas fa-plus"></i></button>
+        </form>
+        <div class="todolist">
+            
+            <ul class="todolist-list-container">
+                <div>
+                    <h2>Your Task List</h2>
+                </div>
+                
+                <div class="list-group">
+                    <li class="unchecked">flip grid video</li>
+                    <button class="btn">&#128473;</button>
+                </div>
+                
+                <div class="list-group">
+                    <li class="checked">code challenge 001</li>
+                    <button class="btn">&#128473;</button>
+                </div>
+                
+                <div class="list-group">
+                    <li class="unchecked"> CMS resume </li>
+                    <button class="btn">&#128473;</i></button>
+                </div>
+                
+                <div class="list-group">
+                    <li class="unchecked">web page responsive</li>
+                    <button class="btn">&#128473;</button>
+                </div>
+                
+            </ul>
+        </div>
+        <div id="footer"  ><h3 class="count"> <p id=checkedTasks> 0</p> out of <p id=allTasks>0</p> tasks completed</h3></div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>
