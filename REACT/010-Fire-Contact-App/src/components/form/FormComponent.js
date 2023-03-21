@@ -35,18 +35,18 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
       <p className="contact-header">
         <div>
           <a
-            href="https://github.com/clarusway"
+            href="https://github.com/emreozdin"
             className="design"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <code>{"<Clarusway/> "}</code>
+            <code>{"<EmreOzdin/> "}</code>
           </a>
         </div>
         <span className="design header">design</span>
       </p>
       <h2 className="contact-header">Add Contact</h2>
-    
+
       <Box style={{ backgroundColor: "white", padding: "20px" }}>
         <form onSubmit={handleFormSubmit}>
           <Stack spacing={3} direction="column">
