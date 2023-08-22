@@ -4,12 +4,12 @@ const { Schema } = mongoose;
 
 const photoSchema = new Schema({
   name: {
-    type: "string",
+    type: String,
     required: true,
     trim: true,
   },
   description: {
-    type: "string",
+    type: String,
     required: true,
     trim: true,
   },
