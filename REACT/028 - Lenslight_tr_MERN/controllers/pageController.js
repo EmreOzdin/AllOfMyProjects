@@ -22,5 +22,11 @@ const getLoginPage = (req, res) => {
     link: "login",
   });
 };
+const getLogout = (req, res) => {
+  res.cookie("jwt", {
+    maxAge: 1,
+  });
+  res.redirect("/");
+};
 
-export { getAboutPage, getIndexPage, getRegisterPage, getLoginPage };
+export { getAboutPage, getIndexPage, getRegisterPage, getLoginPage, getLogout };
