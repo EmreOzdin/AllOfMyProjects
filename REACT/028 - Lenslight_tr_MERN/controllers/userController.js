@@ -5,10 +5,7 @@ import jwt from "jsonwebtoken";
 const createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
-    res.status(201).json({
-      succeeded: true,
-      user,
-    });
+    res.redirect("/login");
   } catch (error) {
     res.status(500).json({
       succeeded: false,
@@ -16,13 +13,11 @@ const createUser = async (req, res) => {
     });
   }
 };
-
 const loginUser = async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
     let same = false;
-
     if (user) {
       same = await bcrypt.compare(password, user.password);
     } else {
@@ -40,7 +35,7 @@ const loginUser = async (req, res) => {
 
       res.redirect("/users/dashboard");
     } else {
-      res.status(500).json({
+      res.status(401).json({
         succeeded: false,
         error: "Passwords are not correct",
       });
@@ -59,10 +54,9 @@ const createToken = (userId) => {
   });
 };
 
-const getDashboardPage = (req, res) => {
-  res.render("dashboard", {
-    link: "dashboard",
-  });
-};
-
+  const getDashboardPage = (req, res) => {
+    res.render("dashboard", {
+      link: "dashboard",
+    });
+  };
 export { createUser, loginUser, getDashboardPage };
