@@ -1,13 +1,13 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import Photo from "../models/photoModel.js";
 
 const createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
     res.status(201).json({ user: user._id });
   } catch (error) {
-
     let errors2 = {};
 
     if (error.code === 11000) {
@@ -19,7 +19,6 @@ const createUser = async (req, res) => {
         errors2[key] = error.errors[key].message;
       });
     }
-    console.log("ERRORS2:::", errors2);
 
     res.status(400).json({ errors2 });
   }
@@ -65,9 +64,11 @@ const createToken = (userId) => {
   });
 };
 
-  const getDashboardPage = (req, res) => {
-    res.render("dashboard", {
-      link: "dashboard",
-    });
-  };
+const getDashboardPage = async (req, res) => {
+  const photos = await Photo.find({ user: res.locals.user._id });
+  res.render("dashboard", {
+    link: "dashboard",
+    photos,
+  });
+};
 export { createUser, loginUser, getDashboardPage };
