@@ -153,7 +153,7 @@ const unfollow = async (req, res) => {
     user = await User.findByIdAndUpdate(
       { _id: res.locals.user._id },
       {
-        $pull: { following: res.params.id },
+        $pull: { followings: res.params.id },
       },
       { new: true }
     );
