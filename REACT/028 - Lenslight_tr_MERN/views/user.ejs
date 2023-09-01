@@ -25,7 +25,7 @@
           <div class="satteb text_align_center">
             <p>
               fact that a reader will be distracted by the readable content of a
-              page when looking at its layout. 
+              page when looking at its layout.
             </p>
             <h3>The point of using</h3>
             <i><img src="/images/custo.jpg" alt="#" /></i>
@@ -34,16 +34,28 @@
       </div>
     </div>
   </div>
-        <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="text_align_center">
-              <a style="margin:20px auto;" class="read_more" href="gallery.html">FOLLOW</a>
-              <a style="margin:20px auto;" class="read_more" href="gallery.html">UNFOLLOW</a>
-            </div>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text_align_center">
+          <% if (!inFollowers) { %>
+          <a
+            style="margin: 20px auto"
+            class="read_more"
+            href="/users/<%= user._id/follow?_method=PUT %>"
+            >FOLLOW</a
+          >
+          <a
+            style="margin: 20px auto"
+            class="read_more"
+            href="/users/<%= user._id/unfollow?_method=PUT %>"
+            >UNFOLLOW</a
+          >
+          <%}%>
         </div>
       </div>
+    </div>
+  </div>
   <div class="gallery">
     <div class="container_with">
       <div class="row">

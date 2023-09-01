@@ -121,7 +121,7 @@ const follow = async (req, res) => {
     user = await User.findByIdAndUpdate(
       { _id: res.locals.user._id },
       {
-        $push: { following: res.params.id },
+        $push: { followings: req.params.id },
       },
       { new: true }
     );
@@ -145,7 +145,7 @@ const unfollow = async (req, res) => {
         _id: req.params.id,
       },
       {
-        $pull: { followers: res.locals.user._id },
+        $pull: { followers: req.locals.user._id },
       },
       { new: true }
     );
@@ -153,7 +153,7 @@ const unfollow = async (req, res) => {
     user = await User.findByIdAndUpdate(
       { _id: res.locals.user._id },
       {
-        $pull: { followings: res.params.id },
+        $pull: { followings: req.params.id },
       },
       { new: true }
     );
