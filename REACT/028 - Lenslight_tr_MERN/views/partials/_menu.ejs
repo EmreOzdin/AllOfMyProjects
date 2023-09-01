@@ -23,6 +23,11 @@
                   >Photos</a
                 >
               </li>
+              <li>
+                <a class="<%= link === 'contact' && 'active' %>" href="/contact"
+                  >Contact</a
+                >
+              </li>
               <% if (user){ %>
               <li>
                 <a class="<%= link === 'users' && 'active' %>" href="/users"
@@ -53,7 +58,6 @@
                 >
               </li>
               <%}%>
-
               <!-- <li><a href="services.html">Services</a></li>
               <li><a href="projects.html">Projects</a></li>
               <li><a href="blog.html">Blog</a></li>
